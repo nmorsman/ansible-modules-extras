@@ -195,7 +195,7 @@ def alter_retention_policy(module, client, retention_policy):
     elif duration_lookup.group(2) == 'w':
         influxdb_duration_format = '%sh0m0s' % (int(duration_lookup.group(1)) * 24 * 7)
     elif duration == 'INF':
-        influxdb_duration_format = 'INF'
+        influxdb_duration_format = '0'
 
     if not retention_policy['duration'] == influxdb_duration_format or not retention_policy['replicaN'] == int(replication) or not retention_policy['default'] == default:
         if not module.check_mode:

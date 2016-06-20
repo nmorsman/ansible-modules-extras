@@ -125,7 +125,7 @@ def influxdb_argument_spec():
         port=dict(default=8086, type='int'),
         username=dict(default='root', type='str'),
         password=dict(default='root', type='str', no_log=True),
-        database_name=dict(default=None, type='str')
+        database_name=dict(required=True, type='str')
     )
 
 
